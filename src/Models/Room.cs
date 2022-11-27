@@ -1,4 +1,5 @@
 using HogwartsHouses.Models.Types;
+using System.Collections.Generic;
 
 namespace HogwartsHouses.Models
 {
@@ -10,6 +11,7 @@ namespace HogwartsHouses.Models
         public HouseType House { get; set; }
         public int MaxCapacity { get; set; }
         public int FreeBeds { get; set; }
+        public List<Student> Students { get; set; }
 
         public Room(HouseType house, int maxCapacity)
         {

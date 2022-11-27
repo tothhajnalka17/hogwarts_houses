@@ -11,6 +11,7 @@ namespace HogwartsHouses.Models
         public string LastName { get; set; }
         public HouseType House { get; set; }
         public PetType Pet { get; set; }
+        public Room AssignedRoom { get; set; }
 
         public Student(string firstName, string lastName, HouseType house, PetType pet)
         {

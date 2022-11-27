@@ -50,5 +50,12 @@ namespace HogwartsHouses.DAL
             roomToUpdate.MaxCapacity = updatedRoom.MaxCapacity;
             roomToUpdate.FreeBeds = updatedRoom.FreeBeds;
         }
+
+        public void AssignStudentToRoom(Room room, Student student)
+        {
+            student.AssignedRoom = room;
+            room.Students.Add(student);
+            room.FreeBeds--;
+        }
     }
 }
