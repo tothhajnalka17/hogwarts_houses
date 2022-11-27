@@ -38,5 +38,11 @@ namespace HogwartsHouses.Controllers
         {
             return _roomService.FindRoom(id);
         }
+
+        [HttpDelete("rooms/{id}")]
+        public void EradoLocus(int id)
+        {
+            _roomService.DeleteRoom(id);
+        }
     }
 }
