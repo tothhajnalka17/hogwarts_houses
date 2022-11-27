@@ -33,5 +33,10 @@ namespace HogwartsHouses.DAL
             Room newRoom = new Room((HouseType)house, maxCapacity);
             AddRoom(newRoom);
         }
+
+        public Room FindRoom(int id)
+        {
+            return _repository.Find(id);
+        }
     }
 }

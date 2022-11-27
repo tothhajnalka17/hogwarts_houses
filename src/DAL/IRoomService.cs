@@ -8,5 +8,6 @@ namespace HogwartsHouses.DAL
         public List<Room> ListAllRooms();
         public void AddRoom(Room room);
         public void AddRandomRoom();
+        public Room FindRoom(int id);
     }
 }

@@ -32,5 +32,11 @@ namespace HogwartsHouses.Controllers
         {
             _roomService.AddRandomRoom();
         }
+
+        [HttpGet("rooms/{id}")]
+        public Room InvenioLocus(int id)
+        {
+            return _roomService.FindRoom(id);
+        }
     }
 }
