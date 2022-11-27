@@ -1,4 +1,7 @@
 using HogwartsHouses.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace HogwartsHouses.DAL
 {
@@ -9,6 +12,16 @@ namespace HogwartsHouses.DAL
         public RoomService(IRepository<Room> repository)
         {
             _repository = repository;
+        }
+
+        public List<Room> ListAllRooms()
+        {
+            return _repository.GetAll();
+        }
+
+        public void AddRoom(Room room)
+        {
+            throw new NotImplementedException();
         }
     }
 }
