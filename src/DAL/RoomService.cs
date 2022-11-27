@@ -1,4 +1,5 @@
 using HogwartsHouses.Models;
+using HogwartsHouses.Models.Types;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,16 @@ namespace HogwartsHouses.DAL
 
         public void AddRoom(Room room)
         {
-            throw new NotImplementedException();
+            _repository.Insert(room);
+        }
+
+        public void AddRandomRoom()
+        {
+            Random rnd = new Random();
+            int house = rnd.Next(1, 4);
+            int maxCapacity = rnd.Next(1, 10);
+            Room newRoom = new Room((HouseType)house, maxCapacity);
+            AddRoom(newRoom);
         }
     }
 }
