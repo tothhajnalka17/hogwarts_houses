@@ -15,12 +15,12 @@ namespace HogwartsHouses.DAL
 
         public List<Room> GetAll()
         {
-            var RoomList = new List<Room>();
-            foreach (var room in RoomSampler.Rooms)
-            {
-                RoomList.Add(room);
-            }
-            return RoomList;
+            return RoomSampler.Rooms.ToList();
+        }
+
+        public List<Room> GetAllAvailable()
+        {
+            return RoomSampler.Rooms.Where((room) => room.FreeBeds > 0).ToList();
         }
 
         public Room Find(int id)

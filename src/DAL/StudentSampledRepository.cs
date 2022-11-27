@@ -1,22 +1,23 @@
 ﻿using HogwartsHouses.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace HogwartsHouses.DAL
 {
-    public class StudentampledRepository : IRepository<Student>
+    public class StudentSampledRepository : IRepository<Student>
     {
         public StudentSampler StudentSampler { get; }
 
-        public StudentSampledRepository()
+        public StudentSampledRepository(IRoomService roomService)
         {
-            StudentSampler = new StudentSampler();
+            StudentSampler = new StudentSampler(roomService);
         }
 
         public List<Student> GetAll()
         {
             var StudentList = new List<Student>();
-            foreach (var room in StudentSampler.Students)
+            foreach (var student in StudentSampler.Students)
             {
                 StudentList.Add(student);
             }
@@ -42,6 +43,11 @@ namespace HogwartsHouses.DAL
         public void Delete(Student entity)
         {
             StudentSampler.Students.Remove(entity);
+        }
+
+        public List<Student> GetAllAvailable()
+        {
+            throw new NotImplementedException();
         }
     }
 }

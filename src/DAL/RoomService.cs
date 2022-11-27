@@ -57,5 +57,10 @@ namespace HogwartsHouses.DAL
             room.Students.Add(student);
             room.FreeBeds--;
         }
+
+        public List<Room> GetAllAvailableRooms()
+        {
+            return _repository.GetAllAvailable();
+        }
     }
 }

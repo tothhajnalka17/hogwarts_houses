@@ -51,5 +51,11 @@ namespace HogwartsHouses.Controllers
             _roomService.UpdateRoom(_roomService.FindRoom(id), updatedRoom);
 
         }
+
+        [HttpGet("rooms/available")]
+        public List<Room> FindAllAvailableRooms()
+        {
+            return _roomService.GetAllAvailableRooms();
+        }
     }
 }
