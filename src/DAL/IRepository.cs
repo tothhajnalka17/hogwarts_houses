@@ -8,6 +8,7 @@ namespace HogwartsHouses.DAL
         public T Find(int id);
         public List<T> GetAll();
         public List<T> GetAllAvailable();
+        public List<T> GetAllAvailableRatRooms();
         public void Insert(T entity);
         public void Update(T entity);
         public void Delete(T entity);

@@ -12,6 +12,7 @@ namespace HogwartsHouses.Models
         public int MaxCapacity { get; set; }
         public int FreeBeds { get; set; }
         public List<Student> Students { get; set; }
+        public List<PetType> PetTypes { get; set; }
 
         public Room(HouseType house, int maxCapacity)
         {

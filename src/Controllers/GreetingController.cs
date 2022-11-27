@@ -57,5 +57,11 @@ namespace HogwartsHouses.Controllers
         {
             return _roomService.GetAllAvailableRooms();
         }
+
+        [HttpGet("rooms/rat-owners")]
+        public List<Room> FindAllRatRooms()
+        {
+            return _roomService.GetAllAvailableRooms();
+        }
     }
 }

@@ -55,12 +55,17 @@ namespace HogwartsHouses.DAL
         {
             student.AssignedRoom = room;
             room.Students.Add(student);
+            room.PetTypes.Add(student.Pet);
             room.FreeBeds--;
         }
 
         public List<Room> GetAllAvailableRooms()
         {
             return _repository.GetAllAvailable();
+        }
+        public List<Room> GetAllAvailableRatRooms()
+        {
+            return _repository.GetAllAvailableRatRooms();
         }
     }
 }

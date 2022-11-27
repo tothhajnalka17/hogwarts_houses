@@ -1,4 +1,5 @@
 using HogwartsHouses.Models;
+using HogwartsHouses.Models.Types;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,6 +22,12 @@ namespace HogwartsHouses.DAL
         public List<Room> GetAllAvailable()
         {
             return RoomSampler.Rooms.Where((room) => room.FreeBeds > 0).ToList();
+        }
+
+        public List<Room> GetAllAvailableRatRooms()
+        {
+            List<Room> RatRooms = RoomSampler.Rooms.Where((room) => room.PetTypes.Contains(PetType.Rat) && room.FreeBeds > 0).ToList();
+            return GetAll().Except(RatRooms).ToList();
         }
 
         public Room Find(int id)

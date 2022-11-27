@@ -49,5 +49,9 @@ namespace HogwartsHouses.DAL
         {
             throw new NotImplementedException();
         }
+        public List<Student> GetAllAvailableRatRooms()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
