@@ -1,6 +1,7 @@
 ﻿using HogwartsHouses.DAL;
 using HogwartsHouses.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace HogwartsHouses.Controllers
@@ -24,6 +25,12 @@ namespace HogwartsHouses.Controllers
         public List<Room> LocusOmnis()
         {
             return _roomService.ListAllRooms();
+        }
+
+        [HttpPost("rooms")]
+        public void LocusNovus()
+        {
+            _roomService.AddRandomRoom();
         }
     }
 }
