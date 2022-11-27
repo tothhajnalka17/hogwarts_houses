@@ -43,5 +43,12 @@ namespace HogwartsHouses.DAL
         {
             _repository.Delete(FindRoom(id));
         }
+
+        public void UpdateRoom(Room roomToUpdate, Room updatedRoom)
+        {
+            roomToUpdate.House = updatedRoom.House;
+            roomToUpdate.MaxCapacity = updatedRoom.MaxCapacity;
+            roomToUpdate.FreeBeds = updatedRoom.FreeBeds;
+        }
     }
 }

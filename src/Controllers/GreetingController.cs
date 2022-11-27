@@ -44,5 +44,12 @@ namespace HogwartsHouses.Controllers
         {
             _roomService.DeleteRoom(id);
         }
+
+        [HttpPut("rooms/{id}")]
+        public void RenovoLocus(int id, [FromBody]Room updatedRoom)
+        {
+            _roomService.UpdateRoom(_roomService.FindRoom(id), updatedRoom);
+
+        }
     }
 }
